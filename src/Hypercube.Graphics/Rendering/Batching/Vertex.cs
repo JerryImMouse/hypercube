@@ -35,19 +35,16 @@ public readonly struct Vertex
         Color = DefaultColor;
     }
 
-    public float[] ToVertices()
+    public IEnumerable<float> ToVertices()
     {
-        return
-        [
-            Position.X,
-            Position.Y,
-            Position.Z,
-            Color.R,
-            Color.G,
-            Color.B,
-            Color.A,
-            UVCoords.X,
-            UVCoords.Y
-        ];
+        yield return Position.X;
+        yield return Position.Y;
+        yield return Position.Z;
+        yield return Color.R;
+        yield return Color.G;
+        yield return Color.B;
+        yield return Color.A;
+        yield return UVCoords.X;
+        yield return UVCoords.Y;
     }
 }
